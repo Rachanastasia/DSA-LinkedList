@@ -28,6 +28,8 @@ class LinkedList {
     }
 
 
+
+
     find(item) {
         let currNode = this.head;
         if (!this.head) {
@@ -43,6 +45,43 @@ class LinkedList {
             }
         }
         return currNode;
+    }
+
+    insertBefore(item, before) {
+        let tempNode = this.head;
+        while (tempNode.next !== this.find(before)) {
+            tempNode = tempNode.next;
+        }
+        let num = tempNode.next;
+        tempNode.next = new _Node(item, num);
+
+    }
+
+    insertAfter(item, after) {
+        let tempNode = this.head;
+        while (tempNode.next !== this.find(after)) {
+            tempNode = tempNode.next;
+        }
+        tempNode = tempNode.next.next;
+        let num = tempNode.next;
+        tempNode.next = new _Node(item, num);
+
+    }
+
+    insertAt(item, pos) {
+        if (pos === 1) {
+            this.insertFirst(item)
+        }
+        else {
+            let tempNode = this.head;
+            let positionCounter = 1;
+            while (positionCounter < pos - 1) {
+                positionCounter++
+                tempNode = tempNode.next;
+            }
+            let num = tempNode.next;
+            tempNode.next = new _Node(item, num);
+        }
     }
 
     remove(item) {
