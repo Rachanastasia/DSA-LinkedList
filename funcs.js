@@ -11,16 +11,30 @@ function main() {
     SSL.insertBefore('Athena', 'Boomer')
     SSL.insertAfter('Hotdog', 'Helo')
     SSL.insertAt('Kat', 3)
-    SSL.remove('Tauhida')
+    SSL.remove('Helo')
 
-    display(SSL)
-    size(SSL)
-    isEmpty(SSL)
-    findPrevious(SSL, 'Helo')
-    findLast(SSL)
-    reverse(SSL)
-    thirdFromTheEnd(SSL)
+    // display(SSL)
+    // size(SSL)
+    // isEmpty(SSL)
+    // findPrevious(SSL, 'Helo')
+    // findLast(SSL)
+    // reverse(SSL)
+    // thirdFromTheEnd(SSL)
 
+}
+
+function mainDLL() {
+    const LL = new LinkedList()
+    LL.insertLast('Aquaria')
+    LL.insertLast('Caprica')
+    LL.insertLast('Gemenon')
+    LL.insertLast('Picon')
+    LL.insertLast('Sagittaton')
+    LL.insertLast('Tauron')
+    LL.remove('Picon')
+
+    display(LL)
+    size(LL)
 }
 
 function display(list) {
@@ -130,7 +144,7 @@ function thirdFromTheEnd(list, prev = null, node = null) {
     return reverse(list, prev, node)
 }
 
-
+mainDLL()
 main()
 
 
